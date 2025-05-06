@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import heroImage from './assets/img/Fond en dégradé.png';
 import instagramIcon from './assets/img/social/instag.png';
@@ -6,39 +6,80 @@ import tiktokIcon from './assets/img/social/TIKTOK.png';
 import linkedinIcon from './assets/img/social/LINKEDIN.png';
 import facebookIcon from './assets/img/social/facebook.png';
 import logoNarcisse from './assets/img/logo/logo_blanc_nar6.png';
+import placeholder from './assets/img/placeholder.png';
+import aproposdenous from './assets/img/aproposdenous.png';
+import processus from './assets/img/processus.png';
+
 
 function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <div>
       {/* Header minimaliste */}
       <header className="w-full absolute top-0 left-0 z-50 bg-transparent">
-        <div className="max-w-[2100px] mx-auto px-32 py-8 flex items-center justify-between">
+        <div className="max-w-[2100px] mx-auto px-4 md:px-32 py-8 flex items-center justify-between">
           {/* Logo à gauche */}
           <div className="flex items-center">
             <img src={logoNarcisse} alt="Narcisse" className="h-8 mr-2" />
           </div>
-          {/* Menu au centre */}
-          <nav>
+
+          {/* Menu hamburger pour mobile */}
+          <button 
+            className="md:hidden text-white"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {isMenuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
+
+          {/* Menu desktop */}
+          <nav className="hidden md:block">
             <ul className="flex space-x-28 font-century text-white text-base">
-              <li><a href="#" className="hover:underline font-bold">Menu</a></li>
-              <li><a href="#" className="hover:underline">À propos de nous</a></li>
-              <li><a href="#" className="hover:underline">Nos services</a></li>
-              <li><a href="#" className="hover:underline">Nos projets</a></li>
-              <li><a href="#" className="hover:underline">Contact</a></li>
+              <li><a href="#about" className="hover:underline">À propos de nous</a></li>
+              <li><a href="#services" className="hover:underline">Nos services</a></li>
+              <li><a href="#projects" className="hover:underline">Nos projets</a></li>
+              <li><a href="#contact" className="hover:underline">Contact</a></li>
             </ul>
           </nav>
+
+          {/* Menu mobile */}
+          <div className={`fixed inset-0 bg-black bg-opacity-90 z-50 transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out md:hidden`}>
+            <div className="flex flex-col items-center justify-center h-full relative">
+              <button 
+                className="absolute top-8 right-8 text-white"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+              <ul className="text-white text-2xl space-y-8 text-center">
+                <li><a href="#about" className="hover:underline" onClick={() => setIsMenuOpen(false)}>À propos de nous</a></li>
+                <li><a href="#services" className="hover:underline" onClick={() => setIsMenuOpen(false)}>Nos services</a></li>
+                <li><a href="#projects" className="hover:underline" onClick={() => setIsMenuOpen(false)}>Nos projets</a></li>
+                <li><a href="#contact" className="hover:underline" onClick={() => setIsMenuOpen(false)}>Contact</a></li>
+              </ul>
+            </div>
+          </div>
+
           {/* Réseaux sociaux à droite */}
-          <div className="flex space-x-16">
-            <a href="#" aria-label="Instagram">
+          <div className="hidden md:flex space-x-16">
+            <a href="https://www.instagram.com/narcisse.projet/?hl=fr" aria-label="Instagram">
               <img src={instagramIcon} alt="Instagram" className="w-7 h-7" />
             </a>
-            <a href="#" aria-label="TikTok">
+            <a href="https://www.tiktok.com/@narcisseprojet" aria-label="TikTok">
               <img src={tiktokIcon} alt="TikTok" className="w-7 h-7" />
             </a>
-            <a href="#" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/company/narcisseprojet" aria-label="LinkedIn">
               <img src={linkedinIcon} alt="LinkedIn" className="w-7 h-7" />
             </a>
-            <a href="#" aria-label="Facebook">
+            <a href="https://www.facebook.com/profile.php?id=61567367669025" aria-label="Facebook">
               <img src={facebookIcon} alt="Facebook" className="w-7 h-7" />
             </a>
           </div>
@@ -70,59 +111,59 @@ function App() {
 
           {/* Bouton en bas */}
           <div className="flex justify-center">
-            <button className="bg-white text-black px-8 py-4 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all duration-300 font-century">
+            <a href="#projects" className="bg-white text-black px-8 py-4 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all duration-300 font-century">
               NOS PROJETS
-            </button>
+            </a>
           </div>
         </div>
       </div>
 
       {/* Section Partenaires */}
-      <div className="bg-white py-16">
+      <div className="bg-white py-16 overflow-hidden">
         <div className="container mx-auto px-8">
-          <div className="grid grid-cols-4 gap-8 items-center">
-            {/* Partenaire 1 */}
-            <div className="flex justify-center">
-              <img 
-                src="/src/assets/img/partners/partner1.png" 
-                alt="Partenaire 1" 
-                className="max-h-16 object-contain"
-              />
-            </div>
-            {/* Partenaire 2 */}
-            <div className="flex justify-center">
-              <img 
-                src="/src/assets/img/partners/partner2.png" 
-                alt="Partenaire 2" 
-                className="max-h-16 object-contain"
-              />
-            </div>
-            {/* Partenaire 3 */}
-            <div className="flex justify-center">
-              <img 
-                src="/src/assets/img/partners/partner3.png" 
-                alt="Partenaire 3" 
-                className="max-h-16 object-contain"
-              />
-            </div>
-            {/* Partenaire 4 */}
-            <div className="flex justify-center">
-              <img 
-                src="/src/assets/img/partners/partner4.png" 
-                alt="Partenaire 4" 
-                className="max-h-16 object-contain"
-              />
+          <div className="partners-container">
+            <div className="partners-wrapper animate-scroll">
+              {/* Premier set de partenaires */}
+              <div className="partner-item">
+                <img 
+                  src={placeholder}
+                  alt="Partenaire 1" 
+                  className="max-h-16 object-contain"
+                />
+              </div>
+              <div className="partner-item">
+                <img 
+                  src={placeholder}
+                  alt="Partenaire 2" 
+                  className="max-h-16 object-contain"
+                />
+              </div>
+              {/* Deuxième set de partenaires (copie pour le défilement infini) */}
+              <div className="partner-item">
+                <img 
+                  src={placeholder}
+                  alt="Partenaire 1" 
+                  className="max-h-16 object-contain"
+                />
+              </div>
+              <div className="partner-item">
+                <img 
+                  src={placeholder}
+                  alt="Partenaire 2" 
+                  className="max-h-16 object-contain"
+                />
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Section Présentation */}
-      <div className="py-24 bg-black">
+      <div id="about" className="py-24 bg-black">
         <div className="container mx-auto px-8">
-          <div className="grid grid-cols-2 gap-16 items-center">
+          <div className="flex flex-col md:grid md:grid-cols-2 gap-16 items-center">
             {/* Partie gauche - Texte */}
-            <div>
+            <div className="order-2 md:order-1">
               <h2 className="text-4xl font-bold text-white mb-8 font-coolvetica">
                 À propos de nous
               </h2>
@@ -137,9 +178,9 @@ function App() {
             </div>
             
             {/* Partie droite - Image */}
-            <div className="relative h-[500px]">
+            <div className="relative h-[300px] md:h-[500px] order-1 md:order-2">
               <img 
-                src="/src/assets/img/presentation.jpg" 
+                src={aproposdenous}
                 alt="Présentation Narcisse" 
                 className="w-full h-full object-cover rounded-lg"
               />
@@ -149,20 +190,20 @@ function App() {
       </div>
 
       {/* Section Présentation Inversée */}
-      <div className="py-24 bg-black">
+      <div id="services" className="py-24 bg-black">
         <div className="container mx-auto px-8">
-          <div className="grid grid-cols-2 gap-16 items-center">
+          <div className="flex flex-col md:grid md:grid-cols-2 gap-16 items-center">
             {/* Partie gauche - Image */}
-            <div className="relative h-[500px]">
+            <div className="relative h-[300px] md:h-[500px] order-1">
               <img 
-                src="/src/assets/img/presentation2.jpg" 
+                src={processus}
                 alt="Présentation Narcisse" 
                 className="w-full h-full object-cover rounded-lg"
               />
             </div>
 
             {/* Partie droite - Texte */}
-            <div>
+            <div className="order-2">
               <h2 className="text-4xl font-bold text-white mb-8 font-coolvetica">
                 Notre processus
               </h2>
@@ -173,7 +214,9 @@ function App() {
                   Pré-production
                 </h3>
                 <p className="text-gray-300 font-century leading-relaxed">
-                  Nous identifions vos besoins, définissons la direction artistique, sélectionnons les lieux et organisons le casting. Cette phase cruciale garantit que chaque détail est pensé pour refléter votre image de marque.
+                  La pré-production pose les bases de votre projet. Nous analysons l'ADN de votre marque pour développer
+                  un concept visuel sur mesure. Notre équipe coordonne chaque détail : repérage des lieux, sélection des
+                  modèles et planification détaillée du shooting pour valoriser vos créations ou vos pièces.
                 </p>
               </div>
 
@@ -183,7 +226,11 @@ function App() {
                   Production
                 </h3>
                 <p className="text-gray-300 font-century leading-relaxed">
-                  Notre équipe de professionnels met en œuvre le projet avec précision, que ce soit en studio ou en extérieur. Nous capturons les moments clés qui racontent votre histoire.
+                  Lors du shooting, notre expertise en audiovisuel sublime vos pièces. Nos photographes capturent
+                  chaque mouvement avec précision, dirigeant les modèles pour mettre en valeur chaque création ou
+                  vêtement. Nos vidéastes immortalisent en image chaque moment de la séance photo, afin de mettre en
+                  lumière notre collaboration. Notre production allie technicité et créativité, ce qui rend votre identité
+                  visuelle percutante
                 </p>
               </div>
 
@@ -193,12 +240,15 @@ function App() {
                   Post-production
                 </h3>
                 <p className="text-gray-300 font-century leading-relaxed">
-                  Nous finalisons votre projet avec des retouches professionnelles, un montage vidéo soigné et une optimisation pour chaque support de diffusion.
+                  En post-production, vos créations ou vêtements sont sublimés. Notre équipe affine chaque image,
+                  harmonise les couleurs et les textures grâce à des retouches photos qui vous ressemblent. Le montage
+                  vidéo ajoute ainsi une esthétique particulière à votre marque, permettant ainsi de captiver votre
+                  audience sur vos réseaux sociaux.
                 </p>
               </div>
 
               <button className="bg-white text-black px-8 py-4 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all duration-300 font-century">
-                EN SAVOIR PLUS
+                Obtenir un devis
               </button>
             </div>
           </div>
@@ -215,7 +265,7 @@ function App() {
             
             {/* Citation */}
             <p className="text-2xl text-gray-800 font-century leading-relaxed relative z-10">
-              La photographie est une brève complicité entre la prévoyance et le hasard.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac magna bibendum, mattis est et, congue mauris. Vestibulum commodo finibus vulputate. Ut at tempus magna. Nulla facilisi.
             </p>
             <p className="text-gray-600 mt-4 font-century">
               John Stuart Mill
@@ -225,7 +275,7 @@ function App() {
       </div>
 
       {/* Section Nos Projets */}
-      <div className="py-24 bg-black">
+      <div id="projects" className="py-24 bg-black">
         <div className="container mx-auto px-8">
           {/* Titre */}
           <h2 className="text-4xl font-bold text-white mb-8 font-coolvetica">
@@ -233,16 +283,16 @@ function App() {
           </h2>
 
           {/* Contenu avec texte et bouton */}
-          <div className="flex items-start justify-between">
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between">
             {/* Texte */}
-            <div className="w-3/4">
+            <div className="w-full md:w-3/4 mb-8 md:mb-0">
               <p className="text-gray-300 font-century leading-relaxed text-justify">
                 Découvrez notre portfolio de projets réalisés avec passion et expertise. Chaque création est le fruit d'une collaboration étroite avec nos clients, visant à capturer l'essence de leur marque et à raconter leur histoire de manière unique. De la photographie de mode aux campagnes publicitaires, en passant par les reportages événementiels, notre agence s'adapte à chaque univers pour offrir des résultats exceptionnels.
               </p>
             </div>
 
             {/* Bouton */}
-            <div className="ml-8">
+            <div className="w-full md:w-auto flex justify-center md:justify-end">
               <button className="bg-white text-black px-8 py-4 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all duration-300 font-century whitespace-nowrap">
                 VOIR TOUS LES PROJETS
               </button>
@@ -254,59 +304,12 @@ function App() {
       {/* Section Grille de Photos */}
       <div className="w-full bg-black py-24">
         <div className="container mx-auto px-8">
-          <div className="w-3/4 mx-auto">
-            <div className="grid grid-cols-5 grid-rows-5 gap-0">
-              {/* Image 1 */}
-              <div className="col-span-2 row-span-3 relative">
-                <img 
-                  src="/src/assets/img/grid/photo1.jpg" 
-                  alt="Projet 1" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
 
-              {/* Image 2 */}
-              <div className="col-span-2 row-span-2 relative">
-                <img 
-                  src="/src/assets/img/grid/photo2.jpg" 
-                  alt="Projet 2" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              {/* Image 3 */}
-              <div className="col-span-3 row-span-2 relative">
-                <img 
-                  src="/src/assets/img/grid/photo3.jpg" 
-                  alt="Projet 3" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              {/* Image 4 */}
-              <div className="col-span-2 row-span-3 relative">
-                <img 
-                  src="/src/assets/img/grid/photo4.jpg" 
-                  alt="Projet 4" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              {/* Image 5 */}
-              <div className="col-span-1 row-span-3 relative">
-                <img 
-                  src="/src/assets/img/grid/photo5.jpg" 
-                  alt="Projet 5" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
       {/* Section Contact */}
-      <div className="w-full bg-white py-24">
+      <div id="contact" className="w-full bg-white py-24">
         <div className="container mx-auto px-8">
           <div className="flex items-center justify-center">
             <span className="text-5xl font-bold font-century mr-20">Contactez-nous&nbsp;!</span>
@@ -319,30 +322,32 @@ function App() {
 
       {/* Footer Section */}
       <footer className="w-full bg-black py-16">
-        <div className="flex flex-col items-center justify-center space-y-24">
-          {/* Réseaux sociaux */}
-          <div className="flex space-x-8">
-            <a href="#" aria-label="Instagram">
-              <img src={instagramIcon} alt="Instagram" className="w-10 h-10" />
-            </a>
-            <a href="#" aria-label="TikTok">
-              <img src={tiktokIcon} alt="TikTok" className="w-10 h-10" />
-            </a>
-            <a href="#" aria-label="LinkedIn">
-              <img src={linkedinIcon} alt="LinkedIn" className="w-10 h-10" />
-            </a>
-            <a href="#" aria-label="Facebook">
-              <img src={facebookIcon} alt="Facebook" className="w-10 h-10" />
-            </a>
+        <div className="container mx-auto px-8">
+          <div className="flex flex-col items-center justify-center space-y-24">
+            {/* Réseaux sociaux */}
+            <div className="flex space-x-8">
+              <a href="https://www.instagram.com/narcisse.projet/?hl=fr" aria-label="Instagram">
+                <img src={instagramIcon} alt="Instagram" className="w-10 h-10 social-icon" />
+              </a>
+              <a href="https://www.tiktok.com/@narcisseprojet" aria-label="TikTok">
+                <img src={tiktokIcon} alt="TikTok" className="w-10 h-10 social-icon" />
+              </a>
+              <a href="https://www.linkedin.com/company/narcisseprojet" aria-label="LinkedIn">
+                <img src={linkedinIcon} alt="LinkedIn" className="w-10 h-10 social-icon" />
+              </a>
+              <a href="https://www.facebook.com/profile.php?id=61567367669025" aria-label="Facebook">
+                <img src={facebookIcon} alt="Facebook" className="w-10 h-10 social-icon" />
+              </a>
+            </div>
+
+            {/* Texte */}
+            <p className="text-white text-center max-w-3xl font-century text-base">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+            </p>
+
+            {/* Logo */}
+            <img src={logoNarcisse} alt="Narcisse" className="h-12 mt-4" />
           </div>
-
-          {/* Texte */}
-          <p className="text-white text-center max-w-3xl font-century text-base">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
-          </p>
-
-          {/* Logo */}
-          <img src={logoNarcisse} alt="Narcisse" className="h-12 mt-4" />
         </div>
       </footer>
 
