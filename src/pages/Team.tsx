@@ -1,75 +1,112 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
+import teamGroup from '../assets/img/team/team-group.jpg';
+import placeholder from '../assets/img/placeholder.png';
+import alexandre from '../assets/img/team/Alexandre.jpg';
+import eva from '../assets/img/team/Eva.jpg';
+import faustine from '../assets/img/team/Faustine.jpg';
+import julie from '../assets/img/team/Julie.jpg';
+import lucas from '../assets/img/team/Lucas.jpg';
+import melvin from '../assets/img/team/Melvin.jpg';
+import pierre from '../assets/img/team/Pierre.jpg';
+import janice from '../assets/img/team/Janice.jpg';
+
+
+const members = [
+  {
+    name: 'PIERRE ALI',
+    position: 'CHEF DE PROJET AUDIOVISUEL',
+    img: pierre,
+  },
+  {
+    name: 'JANICE ATSIN',
+    position: 'STYLISTE & SCÉNOGRAPHE',
+    img: janice,
+  },
+  {
+    name: 'ALEXANDRE LOBBESTAEL',
+    position: 'DIRECTEUR ARTISTIQUE',
+    img: alexandre,
+  },
+  {
+    name: 'JULIE DEMEYER',
+    position: 'STYLISTE & SCÉNOGRAPHE',
+    img: julie,
+  },
+  {
+    name: 'MELVIN CABOCHE',
+    position: 'CHARGÉ DE PRODUCTION',
+    img: melvin,
+  },
+  {
+    name: 'EVA FIEVET',
+    position: 'CHARGÉE DE COMMUNICATION',
+    img: eva,
+  },
+  {
+    name: 'LUCAS DHOISNE',
+    position: 'VIDÉASTE & MOTION DESIGNER',
+    img: lucas,
+  },
+  {
+    name: 'FAUSTINE COGET',
+    position: 'CHARGÉE DE MARKETING',
+    img: faustine,
+  },
+];
 
 const Team = () => {
   return (
-    <div className="pt-32 pb-24 bg-black">
+    <div className="pt-32 pb-24 bg-black min-h-screen">
       <div className="container mx-auto px-8">
-        <h1 className="text-4xl font-bold text-white mb-12 font-coolvetica">
-          Notre équipe
+        <h1 className="text-5xl lg:text-6xl font-medium text-white mb-16 font-coolvetica">
+          L'équipe Narcisse
         </h1>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-          {/* Membre 1 */}
-          <div className="bg-white/5 rounded-lg p-8">
-            <div className="aspect-square rounded-full overflow-hidden mb-6">
-              <img 
-                src="https://via.placeholder.com/400" 
-                alt="Membre de l'équipe" 
-                className="w-full h-full object-cover"
-              />
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-16 mb-24">
+          {members.map((member, idx) => (
+            <div key={idx} className="flex flex-col items-start mb-8 md:mb-0">
+              <div className="w-64 aspect-square rounded-lg overflow-hidden mb-4 bg-neutral-900 self-center">
+                <img 
+                  src={member.img} 
+                  alt={member.name} 
+                  className="w-full h-full object-cover object-center mx-auto"
+                  loading="eager"
+                />
+              </div>
+              <div className="text-left w-full pl-2">
+                <h3 className="text-lg lg:text-xl font-bold text-white font-century uppercase tracking-wide mb-1">
+                  {member.name}
+                </h3>
+                <p className="text-xs lg:text-sm text-white font-century uppercase tracking-widest font-light">
+                  {member.position}
+                </p>
+              </div>
             </div>
-            <h3 className="text-2xl font-bold text-white mb-2 font-coolvetica">
-              Prénom Nom
-            </h3>
-            <p className="text-gray-300 mb-4 font-century">
-              Poste
-            </p>
-            <p className="text-gray-400 font-century">
-              Description du membre de l'équipe et de son rôle dans l'agence. Mise en avant des compétences et de l'expertise.
-            </p>
-          </div>
-
-          {/* Membre 2 */}
-          <div className="bg-white/5 rounded-lg p-8">
-            <div className="aspect-square rounded-full overflow-hidden mb-6">
-              <img 
-                src="https://via.placeholder.com/400" 
-                alt="Membre de l'équipe" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <h3 className="text-2xl font-bold text-white mb-2 font-coolvetica">
-              Prénom Nom
-            </h3>
-            <p className="text-gray-300 mb-4 font-century">
-              Poste
-            </p>
-            <p className="text-gray-400 font-century">
-              Description du membre de l'équipe et de son rôle dans l'agence. Mise en avant des compétences et de l'expertise.
-            </p>
-          </div>
-
-          {/* Membre 3 */}
-          <div className="bg-white/5 rounded-lg p-8">
-            <div className="aspect-square rounded-full overflow-hidden mb-6">
-              <img 
-                src="https://via.placeholder.com/400" 
-                alt="Membre de l'équipe" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <h3 className="text-2xl font-bold text-white mb-2 font-coolvetica">
-              Prénom Nom
-            </h3>
-            <p className="text-gray-300 mb-4 font-century">
-              Poste
-            </p>
-            <p className="text-gray-400 font-century">
-              Description du membre de l'équipe et de son rôle dans l'agence. Mise en avant des compétences et de l'expertise.
-            </p>
-          </div>
+          ))}
         </div>
       </div>
+        {/* Section Rejoindre l'équipe en full width */}
+        <div className="w-full bg-white py-10 md:py-16 mt-10">
+          <div className="container mx-auto px-8 flex flex-col md:flex-row items-center gap-10 md:gap-20">
+            <div className="flex-1 text-center md:text-left">
+              <h2 className="text-2xl lg:text-3xl font-bold font-coolvetica mb-4 text-black">Rejoindre l'équipe Narcisse</h2>
+              <p className="text-black font-century mb-8 max-w-lg mx-auto md:mx-0">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+              </p>
+              <Link to="/contact" className="inline-block bg-black text-white px-8 py-3 rounded-full font-century text-base hover:bg-neutral-800 transition-all duration-300">
+                Contactez-nous !
+              </Link>
+            </div>
+            <div className="flex-1 flex justify-center">
+              <img 
+                src={teamGroup} 
+                srcSet={teamGroup.replace('.jpg', '@2x.jpg') + ' 2x'} 
+                alt="L'équipe Narcisse" 
+                className="rounded-2xl w-full max-w-2xl object-cover" 
+                loading="eager"
+              />
+            </div>
+          </div>
+        </div>
     </div>
   );
 };
