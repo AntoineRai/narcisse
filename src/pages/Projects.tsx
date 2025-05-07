@@ -1,4 +1,4 @@
-import React from 'react';
+import placeholder from '../assets/img/placeholder.png';
 
 const Projects = () => {
   return (
@@ -12,7 +12,7 @@ const Projects = () => {
           {/* Projet 1 */}
           <div className="group relative overflow-hidden rounded-lg">
             <img 
-              src="https://via.placeholder.com/600x800" 
+              src={placeholder} 
               alt="Projet 1" 
               className="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110"
             />
@@ -31,7 +31,7 @@ const Projects = () => {
           {/* Projet 2 */}
           <div className="group relative overflow-hidden rounded-lg">
             <img 
-              src="https://via.placeholder.com/600x800" 
+              src={placeholder} 
               alt="Projet 2" 
               className="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110"
             />
@@ -50,7 +50,7 @@ const Projects = () => {
           {/* Projet 3 */}
           <div className="group relative overflow-hidden rounded-lg">
             <img 
-              src="https://via.placeholder.com/600x800" 
+              src={placeholder} 
               alt="Projet 3" 
               className="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110"
             />
@@ -69,7 +69,7 @@ const Projects = () => {
           {/* Projet 4 */}
           <div className="group relative overflow-hidden rounded-lg">
             <img 
-              src="https://via.placeholder.com/600x800" 
+              src={placeholder} 
               alt="Projet 4" 
               className="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110"
             />
@@ -88,7 +88,7 @@ const Projects = () => {
           {/* Projet 5 */}
           <div className="group relative overflow-hidden rounded-lg">
             <img 
-              src="https://via.placeholder.com/600x800" 
+              src={placeholder} 
               alt="Projet 5" 
               className="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110"
             />
@@ -107,7 +107,7 @@ const Projects = () => {
           {/* Projet 6 */}
           <div className="group relative overflow-hidden rounded-lg">
             <img 
-              src="https://via.placeholder.com/600x800" 
+              src={placeholder} 
               alt="Projet 6" 
               className="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110"
             />
