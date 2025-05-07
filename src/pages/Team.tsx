@@ -99,7 +99,6 @@ const Team = () => {
             <div className="flex-1 flex justify-center">
               <img 
                 src={teamGroup} 
-                srcSet={teamGroup.replace('.jpg', '@2x.jpg') + ' 2x'} 
                 alt="L'équipe Narcisse" 
                 className="rounded-2xl w-full max-w-2xl object-cover" 
                 loading="eager"

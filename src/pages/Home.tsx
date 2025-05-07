@@ -5,6 +5,14 @@ import placeholder from '../assets/img/placeholder.png';
 import aproposdenous from '../assets/img/aproposdenous.png';
 import processus from '../assets/img/processus.png';
 
+const photos = [
+  { id: 1, src: placeholder, title: 'Shooting photo', subtitle: 'Les trois tricoteurs', link: '#' },
+  { id: 2, src: placeholder, title: 'Shooting photo', subtitle: 'Les trois tricoteurs', link: '#' },
+  { id: 3, src: placeholder, title: 'Shooting photo', subtitle: 'Les trois tricoteurs', link: '#' },
+  { id: 4, src: placeholder, title: 'Shooting photo', subtitle: 'Les trois tricoteurs', link: '#' },
+  { id: 5, src: placeholder, title: 'Shooting photo', subtitle: 'Les trois tricoteurs', link: '#' }
+];
+
 const Home = () => {
   return (
     <>
@@ -33,7 +41,10 @@ const Home = () => {
 
           {/* Bouton en bas */}
           <div className="flex justify-center">
-            <Link to="/nos-projets" className="bg-white text-black px-8 py-4 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all duration-300 font-century">
+            <Link 
+              to="/nos-projets" 
+              className="bg-white text-black px-8 py-4 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all duration-300 font-century"
+            >
               NOS PROJETS
             </Link>
           </div>
@@ -41,7 +52,7 @@ const Home = () => {
       </div>
 
       {/* Section Partenaires */}
-      <div className="bg-white py-16 overflow-hidden">
+      <div className="py-16 bg-white">
         <div className="container mx-auto px-8">
           {/* Défilement mobile/tablette */}
           <div className="partners-container 2xl:hidden">
@@ -61,6 +72,20 @@ const Home = () => {
                   className="max-h-16 object-contain"
                 />
               </div>
+              <div className="partner-item">
+                <img 
+                  src={placeholder}
+                  alt="Partenaire 3" 
+                  className="max-h-16 object-contain"
+                />
+              </div>
+              <div className="partner-item">
+                <img 
+                  src={placeholder}
+                  alt="Partenaire 4" 
+                  className="max-h-16 object-contain"
+                />
+              </div>
               {/* Deuxième set de partenaires (copie pour le défilement infini) */}
               <div className="partner-item">
                 <img 
@@ -76,10 +101,24 @@ const Home = () => {
                   className="max-h-16 object-contain"
                 />
               </div>
+              <div className="partner-item">
+                <img 
+                  src={placeholder}
+                  alt="Partenaire 3" 
+                  className="max-h-16 object-contain"
+                />
+              </div>
+              <div className="partner-item">
+                <img 
+                  src={placeholder}
+                  alt="Partenaire 4" 
+                  className="max-h-16 object-contain"
+                />
+              </div>
             </div>
           </div>
           {/* Liste statique ordinateur */}
-          <div className="hidden 2xl:flex gap-16 items-center justify-center">
+          <div className="hidden 2xl:flex justify-between items-center max-w-6xl mx-auto">
             <div className="partner-item">
               <img 
                 src={placeholder}
@@ -94,7 +133,20 @@ const Home = () => {
                 className="max-h-16 object-contain"
               />
             </div>
-            {/* Ajoute ici d'autres partenaires si besoin */}
+            <div className="partner-item">
+              <img 
+                src={placeholder}
+                alt="Partenaire 3" 
+                className="max-h-16 object-contain"
+              />
+            </div>
+            <div className="partner-item">
+              <img 
+                src={placeholder}
+                alt="Partenaire 4" 
+                className="max-h-16 object-contain"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -110,10 +162,13 @@ const Home = () => {
               </h2>
               <p className="text-gray-300 mb-8 font-century leading-relaxed">
                 Narcisse, agence créative basée dans les Hauts-de-France, spécialisée dans la mise en valeur de l'image des marques à travers des productions visuelles. Notre équipe de photographes et vidéastes professionnels imagine et réalise des shootings sur mesure en studio comme en extérieur qui reflètent votre univers et vos ambitions, quel que soit votre secteur.
-                <br></br><br></br>
+                <br /><br />
                 Notre approche clé en main vous libère de toute contrainte : nous identifions vos besoins, vous conseillons, puis concevons un package complet repérage de lieux à Lille et dans le Nord, direction artistique, casting, stylisme, production photo et vidéo, post-production et retouches professionnelles.
               </p>
-              <Link to="/notre-equipe" className="inline-block bg-white text-black px-8 py-4 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all duration-300 font-century">
+              <Link 
+                to="/notre-equipe" 
+                className="inline-block bg-white text-black px-8 py-4 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all duration-300 font-century"
+              >
                 EN SAVOIR PLUS
               </Link>
             </div>
@@ -188,7 +243,10 @@ const Home = () => {
                 </p>
               </div>
 
-              <Link to="/contact" className="inline-block bg-white text-black px-8 py-4 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all duration-300 font-century">
+              <Link 
+                to="/contact" 
+                className="inline-block bg-white text-black px-8 py-4 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all duration-300 font-century"
+              >
                 Obtenir un devis
               </Link>
             </div>
@@ -211,6 +269,88 @@ const Home = () => {
             <p className="text-gray-600 mt-4 font-century">
               John Stuart Mill
             </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Section Nos Projets */}
+      <div className="py-24 bg-black">
+        <div className="container mx-auto px-8">
+          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-8 font-coolvetica">
+            Nos projets
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 bg-black text-white">
+            <div className="flex flex-col gap-4">
+              <div className="h-2/3 relative overflow-hidden rounded-lg group">
+                <img 
+                  src={photos[0].src} 
+                  alt="Main Photo" 
+                  className="w-full h-full object-cover transition duration-300 ease-in-out group-hover:blur-sm" 
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-end p-4">
+                  <div>
+                    <p className="text-lg font-semibold">{photos[0].title}</p>
+                    <a href={photos[0].link} className="text-sm underline">{photos[0].subtitle}</a>
+                  </div>
+                </div>
+              </div>
+              <div className="h-1/3 relative overflow-hidden rounded-lg group">
+                <img 
+                  src={photos[1].src} 
+                  alt="Photo 2" 
+                  className="w-full h-full object-cover transition duration-300 ease-in-out group-hover:blur-sm" 
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-end p-4">
+                  <div>
+                    <p className="text-lg font-semibold">{photos[1].title}</p>
+                    <a href={photos[1].link} className="text-sm underline">{photos[1].subtitle}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-col gap-4">
+              <div className="h-1/3 relative overflow-hidden rounded-lg group">
+                <img 
+                  src={photos[2].src} 
+                  alt="Photo 3" 
+                  className="w-full h-full object-cover transition duration-300 ease-in-out group-hover:blur-sm" 
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-end p-4">
+                  <div>
+                    <p className="text-lg font-semibold">{photos[2].title}</p>
+                    <a href={photos[2].link} className="text-sm underline">{photos[2].subtitle}</a>
+                  </div>
+                </div>
+              </div>
+              <div className="flex gap-4 h-2/3">
+                <div className="w-3/5 relative overflow-hidden rounded-lg group">
+                  <img 
+                    src={photos[3].src} 
+                    alt="Photo 4" 
+                    className="w-full h-full object-cover transition duration-300 ease-in-out group-hover:blur-sm" 
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-end p-4">
+                    <div>
+                      <p className="text-lg font-semibold">{photos[3].title}</p>
+                      <a href={photos[3].link} className="text-sm underline">{photos[3].subtitle}</a>
+                    </div>
+                  </div>
+                </div>
+                <div className="w-2/5 relative overflow-hidden rounded-lg group">
+                  <img 
+                    src={photos[4].src} 
+                    alt="Photo 5" 
+                    className="w-full h-full object-cover transition duration-300 ease-in-out group-hover:blur-sm" 
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-end p-4">
+                    <div>
+                      <p className="text-lg font-semibold">{photos[4].title}</p>
+                      <a href={photos[4].link} className="text-sm underline">{photos[4].subtitle}</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

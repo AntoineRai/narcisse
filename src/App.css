@@ -32,13 +32,23 @@
 }
 
 .partner-item {
-  flex: 0 0 50%;
+  flex: 0 0 25%;
   padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (max-width: 768px) {
   .animate-scroll {
     animation: scroll 8s linear infinite;
+  }
+}
+
+@media (min-width: 1536px) {
+  .partner-item {
+    flex: 0 0 auto;
+    padding: 0 2rem;
   }
 }
 
