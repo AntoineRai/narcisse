@@ -47,7 +47,6 @@ const Header = ({ isMenuOpen, setIsMenuOpen, logo, linkClass, iconClass }: Heade
         {/* Menu desktop */}
         <nav className="hidden 2xl:block">
           <ul className={`flex space-x-28 font-century text-base ${linkClass}`}>
-            <li><Link to="/" className="hover:underline">Accueil</Link></li>
             <li><Link to="/notre-equipe" className="hover:underline">Notre équipe</Link></li>
             <li><Link to="/nos-projets" className="hover:underline">Nos projets</Link></li>
             <li><Link to="/contact" className="hover:underline">Contact</Link></li>
