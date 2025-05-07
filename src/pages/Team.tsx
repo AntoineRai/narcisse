@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import teamGroup from '../assets/img/team/team-group.jpg';
-import placeholder from '../assets/img/placeholder.png';
 import alexandre from '../assets/img/team/Alexandre.jpg';
 import eva from '../assets/img/team/Eva.jpg';
 import faustine from '../assets/img/team/Faustine.jpg';
