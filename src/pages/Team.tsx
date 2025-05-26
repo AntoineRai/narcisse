@@ -69,6 +69,10 @@ const Team = () => {
                   alt={member.name} 
                   className="w-full h-full object-cover object-center mx-auto"
                   loading="eager"
+                  width="256"
+                  height="256"
+                  decoding="async"
+                  fetchPriority="high"
                 />
               </div>
               <div className="text-left w-full pl-2">

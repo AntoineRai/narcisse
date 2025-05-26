@@ -34,7 +34,7 @@ const Home = () => {
           <div className="flex-1 flex items-center">
             <div className="max-w-xl">
               <h1 className="text-4xl lg:text-6xl font-bold text-white mb-4 font-coolvetica">
-                Agence de production photo & vidéo
+                <span className="font-happy-times">Agence</span> de production photo <span className="font-happy-times">&</span> vidéo
               </h1>
             </div>
           </div>
@@ -284,7 +284,7 @@ const Home = () => {
               <div className="h-2/3 relative overflow-hidden rounded-lg group">
                 <img 
                   src={photos[0].src} 
-                  alt="Main Photo" 
+                  alt="Main" 
                   className="w-full h-full object-cover transition duration-300 ease-in-out group-hover:blur-sm" 
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-end p-4">
@@ -297,7 +297,7 @@ const Home = () => {
               <div className="h-1/3 relative overflow-hidden rounded-lg group">
                 <img 
                   src={photos[1].src} 
-                  alt="Photo 2" 
+                  alt="Second" 
                   className="w-full h-full object-cover transition duration-300 ease-in-out group-hover:blur-sm" 
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-end p-4">
@@ -312,7 +312,7 @@ const Home = () => {
               <div className="h-1/3 relative overflow-hidden rounded-lg group">
                 <img 
                   src={photos[2].src} 
-                  alt="Photo 3" 
+                  alt="Third" 
                   className="w-full h-full object-cover transition duration-300 ease-in-out group-hover:blur-sm" 
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-end p-4">
@@ -326,7 +326,7 @@ const Home = () => {
                 <div className="w-3/5 relative overflow-hidden rounded-lg group">
                   <img 
                     src={photos[3].src} 
-                    alt="Photo 4" 
+                    alt="Fourth" 
                     className="w-full h-full object-cover transition duration-300 ease-in-out group-hover:blur-sm" 
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-end p-4">
@@ -339,7 +339,7 @@ const Home = () => {
                 <div className="w-2/5 relative overflow-hidden rounded-lg group">
                   <img 
                     src={photos[4].src} 
-                    alt="Photo 5" 
+                    alt="Fifth" 
                     className="w-full h-full object-cover transition duration-300 ease-in-out group-hover:blur-sm" 
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-end p-4">

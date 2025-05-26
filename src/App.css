@@ -1,4 +1,31 @@
 /* Narcisse Custom Styles */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+@font-face {
+  font-family: 'Happy Times';
+  src: url('./assets/fonts/HappyTime.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Happy Times Two';
+  src: url('./assets/fonts/HappyTimeTwo.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Happy Times Three';
+  src: url('./assets/fonts/HappyTimeThree.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-happy-times {
+  font-family: 'Happy Times', serif;
+}
+
 .shadow-custom {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
