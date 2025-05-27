@@ -54,7 +54,7 @@ const Header = ({ isMenuOpen, setIsMenuOpen, logo, linkClass, iconClass }: Heade
         </nav>
 
         {/* Menu mobile */}
-        <div className={`fixed inset-0 bg-black bg-opacity-90 z-50 transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out 2xl:hidden`}>
+        <div className={`fixed inset-0 bg-white z-50 transform transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
           <div className="flex flex-col items-center justify-center h-full relative">
             <button 
               className="absolute top-8 right-8 text-inherit"
@@ -71,32 +71,46 @@ const Header = ({ isMenuOpen, setIsMenuOpen, logo, linkClass, iconClass }: Heade
               <li><Link to="/contact" className="hover:underline" onClick={() => setIsMenuOpen(false)}>Contact</Link></li>
             </ul>
           </div>
+          <div className="flex space-x-2 mt-8">
+            <a href="https://www.instagram.com/narcisse.projet/?hl=fr" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <img src={instagramIcon} alt="Instagram" className="w-8 h-8" />
+            </a>
+            <a href="https://www.tiktok.com/@narcisseprojet" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+              <img src={tiktokIcon} alt="TikTok" className="w-8 h-8" />
+            </a>
+            <a href="https://www.linkedin.com/company/narcisseprojet" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <img src={linkedinIcon} alt="LinkedIn" className="w-8 h-8" />
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61567367669025" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <img src={facebookIcon} alt="Facebook" className="w-8 h-8" />
+            </a>
+          </div>
         </div>
 
         {/* Réseaux sociaux à droite */}
-        <div className="hidden 2xl:flex space-x-16">
-          <a href="https://www.instagram.com/narcisse.projet/?hl=fr" aria-label="Instagram">
+        <div className="hidden 2xl:flex space-x-2">
+          <a href="https://www.instagram.com/narcisse.projet/?hl=fr" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
             <img 
               src={instagramIcon} 
               alt="Instagram" 
               className={`w-7 h-7 object-contain ${iconClass}`}
             />
           </a>
-          <a href="https://www.tiktok.com/@narcisseprojet" aria-label="TikTok">
+          <a href="https://www.tiktok.com/@narcisseprojet" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
             <img 
               src={tiktokIcon} 
               alt="TikTok" 
               className={`w-7 h-7 object-contain ${iconClass}`}
             />
           </a>
-          <a href="https://www.linkedin.com/company/narcisseprojet" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/company/narcisseprojet" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <img 
               src={linkedinIcon} 
               alt="LinkedIn" 
               className={`w-7 h-7 object-contain ${iconClass}`}
             />
           </a>
-          <a href="https://www.facebook.com/profile.php?id=61567367669025" aria-label="Facebook">
+          <a href="https://www.facebook.com/profile.php?id=61567367669025" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
             <img 
               src={facebookIcon} 
               alt="Facebook" 

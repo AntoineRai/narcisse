@@ -32,7 +32,7 @@ const members = [
     img: julie,
   },
   {
-    name: 'MELVIN CABOCHE',
+    name: 'MELVYNE CABOCHE',
     position: 'CHARGÉ DE PRODUCTION',
     img: melvin,
   },
@@ -56,14 +56,14 @@ const members = [
 const Team = () => {
   return (
     <div className="pt-32 pb-24 bg-black min-h-screen">
-      <div className="container mx-auto px-8">
+      <div className="container mx-auto px-4 lg:px-32">
         <h1 className="text-5xl lg:text-6xl font-medium text-white mb-16 font-coolvetica">
           L'équipe Narcisse
         </h1>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-16 mb-24">
           {members.map((member, idx) => (
             <div key={idx} className="flex flex-col items-start mb-8 md:mb-0">
-              <div className="w-64 aspect-square rounded-lg overflow-hidden mb-4 bg-neutral-900 self-center">
+              <div className="w-64 h-64 aspect-square rounded-lg overflow-hidden mb-4 bg-neutral-900 self-center">
                 <img 
                   src={member.img} 
                   alt={member.name} 

@@ -2,15 +2,20 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import heroImage from '../assets/img/Fond en dégradé.png';
 import placeholder from '../assets/img/placeholder.png';
+import Busia1 from '../assets/img/projects/Busia1.jpg';
+import Busia2 from '../assets/img/projects/Busia2.jpg';
+import InesBoutique from '../assets/img/projects/InesBoutique.jpg';
+import Seworigin from '../assets/img/projects/Seworigin.jpg';
+import TroisTricoteurs from '../assets/img/projects/TroisTricoteurs.jpg';
 import aproposdenous from '../assets/img/aproposdenous.png';
 import processus from '../assets/img/processus.png';
 
 const photos = [
-  { id: 1, src: placeholder, title: 'Shooting photo', subtitle: 'Les trois tricoteurs', link: '#' },
-  { id: 2, src: placeholder, title: 'Shooting photo', subtitle: 'Les trois tricoteurs', link: '#' },
-  { id: 3, src: placeholder, title: 'Shooting photo', subtitle: 'Les trois tricoteurs', link: '#' },
-  { id: 4, src: placeholder, title: 'Shooting photo', subtitle: 'Les trois tricoteurs', link: '#' },
-  { id: 5, src: placeholder, title: 'Shooting photo', subtitle: 'Les trois tricoteurs', link: '#' }
+  { id: 1, src: TroisTricoteurs, title: 'Shooting photo', subtitle: 'Les trois tricoteurs', link: '#' },
+  { id: 2, src: Busia1, title: 'Shooting photo', subtitle: 'Busia Vintage', link: '#' },
+  { id: 3, src: Busia2, title: 'Shooting photo', subtitle: 'Busia Vintage', link: '#' },
+  { id: 4, src: Seworigin, title: 'Shooting photo', subtitle: 'Seworigin', link: '#' },
+  { id: 5, src: InesBoutique, title: 'Shooting photo', subtitle: 'Inès Boutique', link: '#' }
 ];
 
 const Home = () => {
@@ -29,7 +34,7 @@ const Home = () => {
         </div>
         
         {/* Contenu */}
-        <div className="relative min-h-screen flex flex-col justify-between px-8 py-16">
+        <div className="relative min-h-screen flex flex-col justify-between px-4 lg:px-32 py-16">
           {/* Conteneur principal centré verticalement */}
           <div className="flex-1 flex items-center">
             <div className="max-w-xl">
@@ -45,7 +50,7 @@ const Home = () => {
               to="/nos-projets" 
               className="bg-white text-black px-8 py-4 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all duration-300 font-century"
             >
-              NOS PROJETS
+              Nos projets
             </Link>
           </div>
         </div>
@@ -157,7 +162,7 @@ const Home = () => {
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-16 items-center">
             {/* Partie gauche - Texte */}
             <div className="order-2 lg:order-1">
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-8 font-coolvetica">
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-8 font-brook">
                 À propos de nous
               </h2>
               <p className="text-gray-300 mb-8 font-century leading-relaxed">
@@ -169,16 +174,16 @@ const Home = () => {
                 to="/notre-equipe" 
                 className="inline-block bg-white text-black px-8 py-4 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all duration-300 font-century"
               >
-                EN SAVOIR PLUS
+                En savoir plus
               </Link>
             </div>
             
             {/* Partie droite - Image */}
-            <div className="relative h-[300px] lg:h-[500px] order-1 lg:order-2">
+            <div className="relative h-auto order-1 lg:order-2">
               <img 
                 src={aproposdenous}
                 alt="Présentation Narcisse" 
-                className="w-full h-full object-cover rounded-lg"
+                className="w-full h-full object-cover rounded-[2rem]"
               />
             </div>
           </div>
@@ -190,23 +195,23 @@ const Home = () => {
         <div className="container mx-auto px-8">
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-16 items-center">
             {/* Partie gauche - Image */}
-            <div className="relative h-[300px] lg:h-[500px] order-1">
+            <div className="relative h-auto order-1">
               <img 
                 src={processus}
                 alt="Présentation Narcisse" 
-                className="w-full h-full object-cover rounded-lg"
+                className="w-full h-full object-cover rounded-[2rem]"
               />
             </div>
 
             {/* Partie droite - Texte */}
             <div className="order-2">
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-8 font-coolvetica">
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-8 font-brook">
                 Notre processus
               </h2>
               
               {/* Pré-production */}
               <div className="mb-8">
-                <h3 className="text-xl lg:text-2xl font-bold text-white mb-4 font-coolvetica">
+                <h3 className="text-xl lg:text-2xl font-bold text-white mb-4 font-brook">
                   Pré-production
                 </h3>
                 <p className="text-gray-300 font-century leading-relaxed">
@@ -218,7 +223,7 @@ const Home = () => {
 
               {/* Production */}
               <div className="mb-8">
-                <h3 className="text-xl lg:text-2xl font-bold text-white mb-4 font-coolvetica">
+                <h3 className="text-xl lg:text-2xl font-bold text-white mb-4 font-brook">
                   Production
                 </h3>
                 <p className="text-gray-300 font-century leading-relaxed">
@@ -232,7 +237,7 @@ const Home = () => {
 
               {/* Post-production */}
               <div className="mb-8">
-                <h3 className="text-xl lg:text-2xl font-bold text-white mb-4 font-coolvetica">
+                <h3 className="text-xl lg:text-2xl font-bold text-white mb-4 font-brook">
                   Post-production
                 </h3>
                 <p className="text-gray-300 font-century leading-relaxed">
@@ -275,17 +280,20 @@ const Home = () => {
 
       {/* Section Nos Projets */}
       <div className="py-24 bg-black">
-        <div className="container mx-auto px-8">
+        <div className="container mx-auto px-4 lg:px-32">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-8 font-coolvetica">
             Nos projets
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 bg-black text-white">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-black text-white">
             <div className="flex flex-col gap-4">
-              <div className="h-2/3 relative overflow-hidden rounded-lg group">
+              <div className="h-[400px] relative overflow-hidden rounded-[2rem] group">
                 <img 
                   src={photos[0].src} 
                   alt="Main" 
-                  className="w-full h-full object-cover transition duration-300 ease-in-out group-hover:blur-sm" 
+                  className="w-full h-full object-cover transition duration-300 ease-in-out group-hover:blur-sm"
+                  loading="lazy"
+                  decoding="async"
+                  fetchPriority="low"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-end p-4">
                   <div>
@@ -294,11 +302,14 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-              <div className="h-1/3 relative overflow-hidden rounded-lg group">
+              <div className="h-[200px] relative overflow-hidden rounded-[2rem] group">
                 <img 
                   src={photos[1].src} 
                   alt="Second" 
-                  className="w-full h-full object-cover transition duration-300 ease-in-out group-hover:blur-sm" 
+                  className="w-full h-full object-cover transition duration-300 ease-in-out group-hover:blur-sm"
+                  loading="lazy"
+                  decoding="async"
+                  fetchPriority="low"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-end p-4">
                   <div>
@@ -309,11 +320,14 @@ const Home = () => {
               </div>
             </div>
             <div className="flex flex-col gap-4">
-              <div className="h-1/3 relative overflow-hidden rounded-lg group">
+              <div className="h-[200px] relative overflow-hidden rounded-[2rem] group">
                 <img 
                   src={photos[2].src} 
                   alt="Third" 
-                  className="w-full h-full object-cover transition duration-300 ease-in-out group-hover:blur-sm" 
+                  className="w-full h-full object-cover transition duration-300 ease-in-out group-hover:blur-sm"
+                  loading="lazy"
+                  decoding="async"
+                  fetchPriority="low"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-end p-4">
                   <div>
@@ -322,12 +336,15 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex gap-4 h-2/3">
-                <div className="w-3/5 relative overflow-hidden rounded-lg group">
+              <div className="flex gap-4 h-[400px]">
+                <div className="w-3/5 relative overflow-hidden rounded-[2rem] group">
                   <img 
                     src={photos[3].src} 
                     alt="Fourth" 
-                    className="w-full h-full object-cover transition duration-300 ease-in-out group-hover:blur-sm" 
+                    className="w-full h-full object-cover transition duration-300 ease-in-out group-hover:blur-sm"
+                    loading="lazy"
+                    decoding="async"
+                    fetchPriority="low"
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-end p-4">
                     <div>
@@ -336,11 +353,14 @@ const Home = () => {
                     </div>
                   </div>
                 </div>
-                <div className="w-2/5 relative overflow-hidden rounded-lg group">
+                <div className="w-2/5 relative overflow-hidden rounded-[2rem] group">
                   <img 
                     src={photos[4].src} 
                     alt="Fifth" 
-                    className="w-full h-full object-cover transition duration-300 ease-in-out group-hover:blur-sm" 
+                    className="w-full h-full object-cover transition duration-300 ease-in-out group-hover:blur-sm"
+                    loading="lazy"
+                    decoding="async"
+                    fetchPriority="low"
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-end p-4">
                     <div>

@@ -18,10 +18,10 @@ const Contact = () => {
       if (!formRef.current) return;
 
       const result = await emailjs.sendForm(
-        'YOUR_SERVICE_ID', // Remplacez par votre Service ID
-        'YOUR_TEMPLATE_ID', // Remplacez par votre Template ID
+        'service_ku8nqib', // Remplacez par votre Service ID
+        'template_y7j7n7o', // Remplacez par votre Template ID
         formRef.current,
-        'YOUR_PUBLIC_KEY' // Remplacez par votre Public Key
+        'OMFrf84GFrC1C7-BT' // Remplacez par votre Public Key
       );
 
       if (result.text === 'OK') {
