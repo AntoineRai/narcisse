@@ -9,13 +9,14 @@ import Seworigin from '../assets/img/projects/Seworigin.jpg';
 import TroisTricoteurs from '../assets/img/projects/TroisTricoteurs.jpg';
 import aproposdenous from '../assets/img/aproposdenous.png';
 import processus from '../assets/img/processus.png';
+import logo3T from '../assets/img/logo/logo3T.webp';
 
 const photos = [
-  { id: 1, src: TroisTricoteurs, title: 'Shooting photo', subtitle: 'Les trois tricoteurs', link: '#' },
-  { id: 2, src: Busia1, title: 'Shooting photo', subtitle: 'Busia Vintage', link: '#' },
-  { id: 3, src: Busia2, title: 'Shooting photo', subtitle: 'Busia Vintage', link: '#' },
-  { id: 4, src: Seworigin, title: 'Shooting photo', subtitle: 'Seworigin', link: '#' },
-  { id: 5, src: InesBoutique, title: 'Shooting photo', subtitle: 'Inès Boutique', link: '#' }
+  { id: 1, src: TroisTricoteurs, title: 'Shooting photo', subtitle: 'Les trois tricoteurs', link: '/nos-projets' },
+  { id: 2, src: Busia1, title: 'Shooting photo', subtitle: 'Busia Vintage', link: 'nos-projets' },
+  { id: 3, src: Busia2, title: 'Shooting photo', subtitle: 'Busia Vintage', link: 'nos-projets' },
+  { id: 4, src: Seworigin, title: 'Shooting photo', subtitle: 'Seworigin', link: 'nos-projets' },
+  { id: 5, src: InesBoutique, title: 'Shooting photo', subtitle: 'Inès Boutique', link: 'nos-projets' }
 ];
 
 const Home = () => {
@@ -39,7 +40,7 @@ const Home = () => {
           <div className="flex-1 flex items-center">
             <div className="max-w-xl">
               <h1 className="text-4xl lg:text-6xl font-bold text-white mb-4 font-coolvetica">
-                <span className="font-happy-times">Agence</span> de production photo <span className="font-happy-times">&</span> vidéo
+                <span className="font-happy-times">Agence</span> <span className="font-normal">de production photo</span> <span className="font-happy-times">&</span> <span className="font-normal">vidéo</span>
               </h1>
             </div>
           </div>
@@ -65,7 +66,7 @@ const Home = () => {
               {/* Premier set de partenaires */}
               <div className="partner-item">
                 <img 
-                  src={placeholder}
+                  src={logo3T}
                   alt="Partenaire 1" 
                   className="max-h-16 object-contain"
                 />
@@ -79,7 +80,7 @@ const Home = () => {
               </div>
               <div className="partner-item">
                 <img 
-                  src={placeholder}
+                  src={logo3T}
                   alt="Partenaire 3" 
                   className="max-h-16 object-contain"
                 />
@@ -94,7 +95,7 @@ const Home = () => {
               {/* Deuxième set de partenaires (copie pour le défilement infini) */}
               <div className="partner-item">
                 <img 
-                  src={placeholder}
+                  src={logo3T}
                   alt="Partenaire 1" 
                   className="max-h-16 object-contain"
                 />
@@ -108,7 +109,7 @@ const Home = () => {
               </div>
               <div className="partner-item">
                 <img 
-                  src={placeholder}
+                  src={logo3T}
                   alt="Partenaire 3" 
                   className="max-h-16 object-contain"
                 />
@@ -126,7 +127,7 @@ const Home = () => {
           <div className="hidden 2xl:flex justify-between items-center max-w-6xl mx-auto">
             <div className="partner-item">
               <img 
-                src={placeholder}
+                src={logo3T}
                 alt="Partenaire 1" 
                 className="max-h-16 object-contain"
               />
@@ -140,7 +141,7 @@ const Home = () => {
             </div>
             <div className="partner-item">
               <img 
-                src={placeholder}
+                src={logo3T}
                 alt="Partenaire 3" 
                 className="max-h-16 object-contain"
               />
@@ -162,7 +163,7 @@ const Home = () => {
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-16 items-center">
             {/* Partie gauche - Texte */}
             <div className="order-2 lg:order-1">
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-8 font-brook">
+              <h2 className="text-3xl lg:text-4xl font-normal tracking-wider text-white mb-8 font-coolvetica">
                 À propos de nous
               </h2>
               <p className="text-gray-300 mb-8 font-century leading-relaxed">
@@ -205,13 +206,13 @@ const Home = () => {
 
             {/* Partie droite - Texte */}
             <div className="order-2">
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-8 font-brook">
+              <h2 className="text-3xl lg:text-4xl font-normal tracking-wider text-white mb-8 font-coolvetica">
                 Notre processus
               </h2>
               
               {/* Pré-production */}
               <div className="mb-8">
-                <h3 className="text-xl lg:text-2xl font-bold text-white mb-4 font-brook">
+                <h3 className="text-xl lg:text-2xl font-normal tracking-wider text-white mb-4 font-coolvetica">
                   Pré-production
                 </h3>
                 <p className="text-gray-300 font-century leading-relaxed">
@@ -223,7 +224,7 @@ const Home = () => {
 
               {/* Production */}
               <div className="mb-8">
-                <h3 className="text-xl lg:text-2xl font-bold text-white mb-4 font-brook">
+                <h3 className="text-xl lg:text-2xl font-normal tracking-wider text-white mb-4 font-coolvetica">
                   Production
                 </h3>
                 <p className="text-gray-300 font-century leading-relaxed">
@@ -237,7 +238,7 @@ const Home = () => {
 
               {/* Post-production */}
               <div className="mb-8">
-                <h3 className="text-xl lg:text-2xl font-bold text-white mb-4 font-brook">
+                <h3 className="text-xl lg:text-2xl font-normal tracking-wider text-white mb-4 font-coolvetica">
                   Post-production
                 </h3>
                 <p className="text-gray-300 font-century leading-relaxed">
@@ -281,7 +282,7 @@ const Home = () => {
       {/* Section Nos Projets */}
       <div className="py-24 bg-black">
         <div className="container mx-auto px-4 lg:px-32">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-8 font-coolvetica">
+          <h2 className="text-3xl lg:text-4xl font-normal tracking-wider text-white mb-8 font-coolvetica">
             Nos projets
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-black text-white">
@@ -294,11 +295,13 @@ const Home = () => {
                   loading="lazy"
                   decoding="async"
                   fetchPriority="low"
+                  width="800"
+                  height="600"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-end p-4">
                   <div>
                     <p className="text-lg font-semibold">{photos[0].title}</p>
-                    <a href={photos[0].link} className="text-sm underline">{photos[0].subtitle}</a>
+                    <Link to={photos[0].link} className="text-sm underline">{photos[0].subtitle}</Link>
                   </div>
                 </div>
               </div>
@@ -310,11 +313,13 @@ const Home = () => {
                   loading="lazy"
                   decoding="async"
                   fetchPriority="low"
+                  width="800"
+                  height="400"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-end p-4">
                   <div>
                     <p className="text-lg font-semibold">{photos[1].title}</p>
-                    <a href={photos[1].link} className="text-sm underline">{photos[1].subtitle}</a>
+                    <Link to={photos[1].link} className="text-sm underline">{photos[1].subtitle}</Link>
                   </div>
                 </div>
               </div>
@@ -328,11 +333,13 @@ const Home = () => {
                   loading="lazy"
                   decoding="async"
                   fetchPriority="low"
+                  width="800"
+                  height="400"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-end p-4">
                   <div>
                     <p className="text-lg font-semibold">{photos[2].title}</p>
-                    <a href={photos[2].link} className="text-sm underline">{photos[2].subtitle}</a>
+                    <Link to={photos[2].link} className="text-sm underline">{photos[2].subtitle}</Link>
                   </div>
                 </div>
               </div>
@@ -345,11 +352,13 @@ const Home = () => {
                     loading="lazy"
                     decoding="async"
                     fetchPriority="low"
+                    width="800"
+                    height="600"
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-end p-4">
                     <div>
                       <p className="text-lg font-semibold">{photos[3].title}</p>
-                      <a href={photos[3].link} className="text-sm underline">{photos[3].subtitle}</a>
+                      <Link to={photos[3].link} className="text-sm underline">{photos[3].subtitle}</Link>
                     </div>
                   </div>
                 </div>
@@ -361,11 +370,13 @@ const Home = () => {
                     loading="lazy"
                     decoding="async"
                     fetchPriority="low"
+                    width="400"
+                    height="600"
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-end p-4">
                     <div>
                       <p className="text-lg font-semibold">{photos[4].title}</p>
-                      <a href={photos[4].link} className="text-sm underline">{photos[4].subtitle}</a>
+                      <Link to={photos[4].link} className="text-sm underline">{photos[4].subtitle}</Link>
                     </div>
                   </div>
                 </div>

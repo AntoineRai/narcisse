@@ -63,16 +63,17 @@ const Team = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-16 mb-24">
           {members.map((member, idx) => (
             <div key={idx} className="flex flex-col items-start mb-8 md:mb-0">
-              <div className="w-full sm:w-64 h-64 aspect-square rounded-lg overflow-hidden mb-4 bg-neutral-900 self-center">
+              <div className="w-full sm:w-64 h-64 aspect-square rounded-lg overflow-hidden mb-4 bg-neutral-900 self-center relative">
+                <div className="absolute inset-0 bg-neutral-900 animate-pulse" />
                 <img 
                   src={member.img} 
                   alt={member.name} 
-                  className="w-full h-full object-cover object-center mx-auto"
-                  loading="eager"
+                  className="w-full h-full object-cover object-center mx-auto relative z-10"
+                  loading="lazy"
                   width="256"
                   height="256"
                   decoding="async"
-                  fetchPriority="high"
+                  fetchPriority="low"
                 />
               </div>
               <div className="text-left w-full pl-2">
@@ -100,12 +101,19 @@ const Team = () => {
               </Link>
             </div>
             <div className="flex-1 flex justify-center">
-              <img 
-                src={teamGroup} 
-                alt="L'équipe Narcisse" 
-                className="rounded-2xl w-full max-w-2xl object-cover" 
-                loading="eager"
-              />
+              <div className="relative w-full max-w-2xl">
+                <div className="absolute inset-0 bg-neutral-900 animate-pulse rounded-2xl" />
+                <img 
+                  src={teamGroup} 
+                  alt="L'équipe Narcisse" 
+                  className="rounded-2xl w-full max-w-2xl object-cover relative z-10"
+                  loading="lazy"
+                  width="800"
+                  height="600"
+                  decoding="async"
+                  fetchPriority="low"
+                />
+              </div>
             </div>
           </div>
         </div>
