@@ -1,5 +1,5 @@
-import placeholder from '../assets/img/placeholder.png';
 import Busia1 from '../assets/img/projects/Busia1.jpg';
+import Busia2 from '../assets/img/projects/Busia2.jpg';
 import Seworigin from '../assets/img/projects/Seworigin.jpg';
 import InesBoutique from '../assets/img/projects/InesBoutique.jpg';
 import TroisTricoteurs from '../assets/img/projects/TroisTricoteurs.jpg';
@@ -127,8 +127,8 @@ const Projects = () => {
           {/* Projet 6 */}
           <div className="group relative overflow-hidden rounded-lg">
             <img 
-              src={placeholder} 
-              alt="Projet 6" 
+              src={Busia2} 
+              alt="Busia Vintage" 
               className="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110"
               loading="lazy"
               decoding="async"
@@ -137,7 +137,7 @@ const Projects = () => {
             <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
               <div className="text-center p-6">
                 <h3 className="text-2xl font-bold text-white mb-2 font-coolvetica">
-                  Nom du projet
+                  Busia Vintage
                 </h3>
                 <p className="text-gray-200 font-century">
                   Description courte du projet

@@ -26,7 +26,7 @@ const Header: React.FC = () => {
             <li><Link to="/" className="hover:underline font-bold">Menu</Link></li>
             <li><Link to="/about" className="hover:underline">À propos de nous</Link></li>
             <li><Link to="/services" className="hover:underline">Nos services</Link></li>
-            <li><Link to="/projects" className="hover:underline">Nos projets</Link></li>
+            <li><Link to="/nos-projets" className="hover:underline">Nos projets</Link></li>
             <li><Link to="/contact" className="hover:underline">Contact</Link></li>
           </ul>
         </nav>
@@ -84,7 +84,7 @@ const Header: React.FC = () => {
                 <li><Link to="/" className="block hover:underline font-bold" onClick={() => setMobileMenuOpen(false)}>Menu</Link></li>
                 <li><Link to="/about" className="block hover:underline" onClick={() => setMobileMenuOpen(false)}>À propos de nous</Link></li>
                 <li><Link to="/services" className="block hover:underline" onClick={() => setMobileMenuOpen(false)}>Nos services</Link></li>
-                <li><Link to="/projects" className="block hover:underline" onClick={() => setMobileMenuOpen(false)}>Nos projets</Link></li>
+                <li><Link to="/nos-projets" className="block hover:underline" onClick={() => setMobileMenuOpen(false)}>Nos projets</Link></li>
                 <li><Link to="/contact" className="block hover:underline" onClick={() => setMobileMenuOpen(false)}>Contact</Link></li>
               </ul>
             </nav>

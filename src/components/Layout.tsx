@@ -13,9 +13,10 @@ interface HeaderProps {
   logo: string;
   linkClass: string;
   iconClass: string;
+  isContact: boolean;
 }
 
-const Header = ({ isMenuOpen, setIsMenuOpen, logo, linkClass, iconClass }: HeaderProps) => {
+const Header = ({ isMenuOpen, setIsMenuOpen, logo, linkClass, iconClass, isContact }: HeaderProps) => {
   return (
     <header className="w-full absolute top-0 left-0 z-50 bg-transparent">
       <div className="max-w-[2100px] mx-auto px-4 lg:px-32 py-8 flex items-center justify-between">
@@ -33,7 +34,7 @@ const Header = ({ isMenuOpen, setIsMenuOpen, logo, linkClass, iconClass }: Heade
         {/* Menu hamburger */}
         <button 
           onClick={() => setIsMenuOpen(!isMenuOpen)} 
-          className="lg:hidden text-white"
+          className={`lg:hidden ${isContact ? 'text-black' : 'text-white'}`}
         >
           <svg 
             xmlns="http://www.w3.org/2000/svg" 
@@ -72,14 +73,14 @@ const Header = ({ isMenuOpen, setIsMenuOpen, logo, linkClass, iconClass }: Heade
                 Accueil
               </Link>
               <Link 
-                to="/team" 
+                to="/notre-equipe" 
                 className="text-white hover:text-gray-300 transition-colors font-century"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Notre équipe
               </Link>
               <Link 
-                to="/projects" 
+                to="/nos-projets" 
                 className="text-white hover:text-gray-300 transition-colors font-century"
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -204,7 +205,14 @@ const Layout = ({ children }: LayoutProps) => {
 
   return (
     <>
-      <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} logo={logo} linkClass={linkClass} iconClass={iconClass} />
+      <Header 
+        isMenuOpen={isMenuOpen} 
+        setIsMenuOpen={setIsMenuOpen} 
+        logo={logo} 
+        linkClass={linkClass} 
+        iconClass={iconClass}
+        isContact={isContact}
+      />
       {children}
       <Footer />
     </>
